@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  color: #eee;
+}
+
+/* ── Page shell ── */
+#app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+/* ── Header ── */
+#header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+#header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #f4a261, #e76f51, #e9c46a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+#header p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  font-weight: 300;
+}
+
+/* ── Card wrapper ── */
+#card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px 36px 28px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Filter row ── */
+#filter-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+#filter-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+/* ── Radio button group ── */
+.region-radio .dash-radioitems {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.region-radio label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(244, 162, 97, 0.35);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(244, 162, 97, 0.06);
+  user-select: none;
+}
+
+.region-radio label:hover {
+  border-color: #f4a261;
+  color: #f4a261;
+  background: rgba(244, 162, 97, 0.12);
+}
+
+/* Hide native radio dot and show a styled one */
+.region-radio input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #94a3b8;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.region-radio input[type="radio"]:checked {
+  background: #f4a261;
+  border-color: #f4a261;
+  box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.25);
+}
+
+.region-radio input[type="radio"]:checked + span,
+.region-radio input[type="radio"]:checked ~ * {
+  color: #f4a261;
+}
+
+/* Active pill when checked — target the label containing a checked input */
+.region-radio label:has(input:checked) {
+  border-color: #f4a261;
+  color: #f4a261;
+  background: rgba(244, 162, 97, 0.18);
+}
+
+/* ── Chart container ── */
+#chart-container .js-plotly-plot {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ── Footer note ── */
+#footer-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.78rem;
+  color: #475569;
+}
